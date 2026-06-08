@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secrets Project</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(135deg, #0f172a 0%, #071024 60%);
+        color: #e6eef8;
+        min-height: 100vh;
+      }
+      .hero {
+        padding: 4rem 0;
+      }
+      .muted {
+        color: #b6c2d9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-3">
+      <p class="navbar-brand">Secrets Project</p>
+    </nav>
+
+    <main class="container">
+      <section class="row align-items-center hero">
+        <div class="col-lg-7">
+          <h1 class="display-6">Share small secrets. Learn big things.</h1>
+          <p class="lead muted">
+            A tiny demo to post a short secret about programming, all you have
+            to do is login to access it.
+          </p>
+          <p class="muted">
+            The secret stays with only those the knows the password.
+          </p>
+        </div>
+
+        <div class="col-lg-5">
+          <form action="/check" method="POST">
+            <label for="password" class="form-label muted">Password:</label>
+            <input
+              type="text"
+              name="password"
+              placeholder="password"
+              class="form-control bg-transparent text-white border-secondary"
+              required
+            />
+            <input
+              type="submit"
+              class="btn btn-outline-light w-100 mx-auto my-3"
+              value="Submit"
+            />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center py-4 muted mt-5">
+      <p>08-Secrets Project · Alpha Studio Code</p>
+    </footer>
+  </body>
+</html>
