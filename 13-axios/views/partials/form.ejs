@@ -1,0 +1,37 @@
+<form
+  action="/"
+  id="form"
+  class="form"
+  method="POST"
+  aria-label="Find activity"
+>
+  <div class="form-field">
+    <label class="sr-only" for="type">Type</label>
+    <select id="type" name="type" class="form-select">
+      <option value="" data-display="Select">Random type</option>
+      <option value="education">Education</option>
+      <option value="charity">Charity</option>
+      <option value="recreational">Recreational</option>
+      <option value="relaxation">Relaxation</option>
+      <option value="busywork">Busywork</option>
+      <option value="social">Social</option>
+      <option value="diy">DIY</option>
+      <option value="music">Music</option>
+    </select>
+  </div>
+
+  <div class="form-field">
+    <label class="sr-only" for="participants">Participants</label>
+    <select id="participants" name="participants" class="form-select">
+      <option value="">Any number of people</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+
+  <div class="form-field form-action">
+    <button type="submit" class="form-submit">Find</button>
+  </div>
+</form>

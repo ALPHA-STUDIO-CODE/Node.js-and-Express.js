@@ -1,0 +1,12 @@
+<article class="card-item">
+  <div class="card-body">
+    <h2 class="card-activity"><%= data.activity %></h2>
+    <div class="card-meta">
+      <span class="card-type"> <strong><%= data.type %></strong> </span>
+      <span class="card-participants"> • <%= data.participants %> people</span>
+    </div>
+    <div class="card-actions">
+      <button class="btn-ghost" onclick="navigator.clipboard?.writeText('<%= data.activity.replace("'","\'") %>')">Copy</button>
+    </div>
+  </div>
+</article>
