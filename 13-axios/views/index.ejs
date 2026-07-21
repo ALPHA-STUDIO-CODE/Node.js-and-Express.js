@@ -1,0 +1,16 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<%- include('partials/form') %>
+
+<section id="cards" class="cards">
+  <% if (locals.data) { %>
+    <%- include('partials/card', { data: data }) %>
+  <% } %>
+
+  <% if (locals.error) { %>
+    <%- include('partials/error', { error: error }) %>
+  <% } %>
+</section>
+
+<%- include('partials/footer') %>

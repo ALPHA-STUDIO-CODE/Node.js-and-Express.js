@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Express App</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: rgba(255, 255, 255, 0.94);
+        --text: #1f2937;
+        --muted: #64748b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        background: linear-gradient(135deg, #eef4ff 0%, #f8fafc 100%);
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .panel {
+        width: min(640px, 100%);
+        background: var(--card);
+        padding: 32px;
+        border-radius: 24px;
+        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+        backdrop-filter: blur(14px);
+      }
+
+      .title {
+        margin: 0 0 8px;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .subtitle {
+        margin: 0 0 24px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .button-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      button {
+        padding: 14px 16px;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 14px;
+        color: white;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 24px rgba(0, 0, 0, 0.14);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      #noAuth {
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+      }
+
+      #basicAuth {
+        background: linear-gradient(135deg, #34d399, #16a34a);
+      }
+
+      #apiKey {
+        background: linear-gradient(135deg, #fbbf24, #eab308);
+      }
+
+      #bearerToken {
+        background: linear-gradient(135deg, #fb7185, #dc2626);
+      }
+
+      .response-area {
+        margin-top: 24px;
+        padding: 16px 18px;
+        border-radius: 14px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        min-height: 70px;
+      }
+
+      .response-area p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      @media (max-width: 560px) {
+        .button-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .panel {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="panel">
+      <h1 class="title">API Authentication Playground</h1>
+      <p class="subtitle">Choose an auth flow and inspect the response.</p>
+
+      <div class="button-grid">
+        <button
+          type="submit"
+          id="noAuth"
+          onclick="window.location.href = '/noAuth'"
+        >
+          No Auth
+        </button>
+        <button id="basicAuth" onclick="window.location.href = '/basicAuth'">
+          Basic Auth
+        </button>
+        <button id="apiKey" onclick="window.location.href = '/apiKey'">
+          API Key
+        </button>
+        <button
+          id="bearerToken"
+          onclick="window.location.href = '/bearerToken'"
+        >
+          Bearer Token
+        </button>
+      </div>
+
+      <div class="response-area">
+        <p><%=content%></p>
+      </div>
+    </div>
+  </body>
+</html>
